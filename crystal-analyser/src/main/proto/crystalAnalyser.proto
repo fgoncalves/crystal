@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.github.fgoncalves.analyser";
+option java_outer_classname = "CrystalAnalyser";
+option objc_class_prefix = "HLW";
+
+package com.github.fgoncalves;
+
+service CrystalAnalyserService {
+  rpc analyse (ReportAnalyseRequest) returns (ReportAnalyseReply) {}
+  rpc status (StatusRequest) returns (ReportAnalyseReply) {}
+}
+
+message ReportAnalyseRequest {
+  string name = 1;
+  bytes data = 2;
+}
+
+enum AnalyserRequestStatus {
+  // Request is submitted to the pool
+  SUBMITTED = 0;
+  // Processing request
+  PROCESSING = 1;
+  DONE = 2;
+  ERROR = 3;
+}
+
+message ReportAnalyseReply {
+  string urn = 1;
+  AnalyserRequestStatus status = 2;
+  string errorMsg = 3;
+}
+
+message StatusRequest {
+  string urn = 1;
+}

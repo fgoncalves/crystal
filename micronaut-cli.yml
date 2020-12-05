@@ -1,0 +1,6 @@
+applicationType: grpc
+defaultPackage: com.github.fgoncalves
+testFramework: junit
+sourceLanguage: kotlin
+buildTool: gradle
+features: [ annotation-api, app-name, gradle, grpc, h2, hibernate-jpa, http-client, jdbc-hikari, junit, kotlin, kotlin-application, kotlin-extension-functions, log4j2, readme, rxjava3, shade, yaml ]

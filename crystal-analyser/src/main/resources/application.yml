@@ -1,0 +1,19 @@
+micronaut:
+  application:
+    name: crystalAnalyser
+datasources:
+  default:
+    url: jdbc:mysql://192.168.178.36:3306/analyser
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: crystal
+    password: 'banana'
+jpa.default.properties.hibernate.hbm2ddl.auto: update
+grpc:
+  server:
+    port: 8080
+    keep-alive-time: 3h
+    max-inbound-message-size: 1024
+
+reports:
+  test:
+    path: "./testreports/"
